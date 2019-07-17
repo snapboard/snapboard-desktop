@@ -4,7 +4,7 @@
 	"version": "0.0.0",
 	"description": "The editable dashboard",
 	"license": "MIT",
-	"repository": "snapboard/desktop",
+	"repository": "snapboard/snapboard-desktop",
 	"author": {
 		"name": "Calum Moore",
 		"email": "calum@1productaweek.com",
