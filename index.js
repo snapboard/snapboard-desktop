@@ -5,6 +5,7 @@ const {autoUpdater} = require('electron-updater');
 const {is} = require('electron-util');
 const unhandled = require('electron-unhandled');
 const debug = require('electron-debug');
+const isDev = require('electron-is-dev');
 const contextMenu = require('electron-context-menu');
 const config = require('./config');
 const menu = require('./menu');
@@ -34,7 +35,7 @@ const createMainWindow = async () => {
 	const win = new BrowserWindow({
 		title: app.getName(),
 		show: false,
-		width: 600,
+		width: 900,
 		height: 600
 	});
 
@@ -48,7 +49,13 @@ const createMainWindow = async () => {
 		mainWindow = undefined;
 	});
 
-	await win.loadFile(path.join(__dirname, 'index.html'));
+	if (isDev) {
+		await win.loadURL('http://localhost:3000');
+	} else {
+		await win.loadFile(path.join(__dirname, './static/index.html'));
+	}
+
+	// win.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, './build/index.html')}`);
 
 	return win;
 };
@@ -85,6 +92,6 @@ app.on('activate', async () => {
 	Menu.setApplicationMenu(menu);
 	mainWindow = await createMainWindow();
 
-	const favoriteAnimal = config.get('favoriteAnimal');
-	mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`);
+	// const favoriteAnimal = config.get('favoriteAnimal');
+	// mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`);
 })();

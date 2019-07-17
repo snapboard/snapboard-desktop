@@ -31,6 +31,7 @@
 		"electron": "^5.0.4",
 		"electron-builder": "^20.43.0",
 		"np": "^5.0.3",
+		"wait-on": "^3.3.0",
 		"xo": "^0.24.0"
 	},
 	"xo": {
@@ -47,7 +48,8 @@
 		"appId": "io.snapboard.desktop",
 		"mac": {
 			"category": "public.app-category.social-networking",
-			"darkModeSupport": true
+			"darkModeSupport": true,
+			"gatekeeperAssess": false
 		},
 		"dmg": {
 			"iconSize": 160,
