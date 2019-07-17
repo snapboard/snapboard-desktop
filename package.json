@@ -1,7 +1,7 @@
 {
 	"name": "snapboard-desktop",
 	"productName": "Snapboard",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "The editable dashboard",
 	"license": "MIT",
 	"repository": "snapboard/snapboard-desktop",
