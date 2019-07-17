@@ -42,8 +42,7 @@
 		"appId": "io.snapboard.desktop",
 		"mac": {
 			"category": "public.app-category.social-networking",
-			"darkModeSupport": true,
-			"gatekeeperAssess": false
+			"darkModeSupport": true
 		},
 		"dmg": {
 			"iconSize": 160,
