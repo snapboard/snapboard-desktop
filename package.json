@@ -34,12 +34,6 @@
 		"wait-on": "^3.3.0",
 		"xo": "^0.24.0"
 	},
-	"xo": {
-		"envs": [
-			"node",
-			"browser"
-		]
-	},
 	"np": {
 		"publish": false,
 		"releaseDraft": false
